@@ -1,0 +1,49 @@
+.img-thumb {
+    height: 200px;
+}
+
+.card {
+    height: 300px !important;
+    display: flex !important;
+    justify-content: center !important;    
+}
+
+.div-cart {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+}
+
+.text-price {
+    font-size: 22px;
+}
+
+.div-cart > button {
+    width: 50px;
+    font-size: 25px;
+    height: 50px;
+}
+
+@media screen and (max-width: 600px) {
+    .img-thumb {
+        height: 120px;
+    }
+
+    .card {
+        height: 400px !important;
+        display: flex;
+    }
+
+    .col-thumb {
+        display: flex;
+        justify-content: center;
+    }
+
+    .col-body {
+        display: flex;
+        flex-direction: column;
+        justify-content: center; 
+        align-items: center;
+        text-align: center;
+    }
+}

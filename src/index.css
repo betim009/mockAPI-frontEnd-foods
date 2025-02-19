@@ -1,15 +1,5 @@
 main {
-    min-height: 100vh;
-}
-
-.img-thumb {
-    height: 200px;
-}
-
-.card {
-    height: 300px !important;
-    display: flex;
-    justify-content: center;
+    min-height: 70vh;
 }
 
 .accordion-button {
@@ -39,12 +29,3 @@ main {
     /* Muda o brilho para vermelho */
 }
 
-@media screen and (max-width: 600px) {
-    .img-thumb {
-        height: 100px;
-    }
-
-    .card {
-        height: 400px !important;
-    }
-}
