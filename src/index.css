@@ -12,12 +12,39 @@ main {
     justify-content: center;
 }
 
+.accordion-button {
+    background-color: rgb(221, 55, 55) !important;
+    color: white !important;
+}
+
+.accordion-button::after {
+    filter: invert(1);
+    /* Deixa a seta branca (inverte cores) */
+}
+
+.accordion-button:not(.collapsed) {
+    background-color: rgb(156, 15, 15) !important;
+    /* Altere para a cor desejada */
+    color: white !important;
+    /* Para ajustar a cor do texto */
+}
+
+.accordion-body {
+    background-color: #ededed !important;
+    color: black !important;
+}
+
+.accordion-button:focus {
+    box-shadow: 0 0 5px red !important;
+    /* Muda o brilho para vermelho */
+}
+
 @media screen and (max-width: 600px) {
     .img-thumb {
         height: 100px;
     }
 
     .card {
-        height: 400px !important; 
+        height: 400px !important;
     }
 }
