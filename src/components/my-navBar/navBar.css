@@ -1,0 +1,15 @@
+.my-nav {
+    display: flex;
+    width: 50%;
+    justify-content: space-evenly;
+}
+
+.my-nav a {
+    text-decoration: none;
+    color: black;
+}
+
+.active {
+    font-weight: 600;
+    border-bottom: 1px solid;
+}

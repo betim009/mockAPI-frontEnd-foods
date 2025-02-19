@@ -1,0 +1,11 @@
+.header-notFound,
+.main-notFound {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.header-notFound {
+    background-color: darkgray;
+    height: 80px;
+}
