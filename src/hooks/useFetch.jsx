@@ -1,8 +1,9 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import { fetchAll, fetchNewPost } from "../services/fetchApi";
+import Context from "../context/Context";
 
 export default function useFetch(initialValue = []) {
-    const [data, setData] = useState(initialValue);
+    const {data, setData} = useContext(Context);
     const [postData, setPostData] = useState({
         title: '',
         body: '',
@@ -13,6 +14,9 @@ export default function useFetch(initialValue = []) {
         const contentLoad = async () => {
             const url = "https://67b5223ba9acbdb38ed16600.mockapi.io/api/v1/foods";
             const result = await fetchAll(url);
+            result.forEach(food => {
+                food.count = 0;
+            });
             setData(result);
         };
 

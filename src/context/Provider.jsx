@@ -3,13 +3,11 @@ import Context from "./Context";
 import PropTypes from "prop-types";
 
 export default function Provider({ children }) {
-  const [anyValue, setAnyValue] = useState("");
-
-  useEffect(() => {}, []);
+  const [data, setData] = useState([]);
 
   const contextValue = {
-    anyValue,
-    setAnyValue,
+    data,
+    setData,
   };
 
   return <Context.Provider value={contextValue}>{children}</Context.Provider>;

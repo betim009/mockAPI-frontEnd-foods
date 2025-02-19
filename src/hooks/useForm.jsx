@@ -26,7 +26,6 @@ export default function useForm(initialValue = "") {
     setMyForm(result);
   }
 
-
   return {
     valueForm,
     handleChange,
