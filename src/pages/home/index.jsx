@@ -3,6 +3,7 @@ import useCart from "../../hooks/useCart";
 import useFetch from "../../hooks/useFetch";
 import Container from 'react-bootstrap/Container';
 import Button from 'react-bootstrap/Button';
+import { Col, Row } from "react-bootstrap";
 
 
 export default function Home() {
@@ -13,29 +14,43 @@ export default function Home() {
   return (
     <main>
       <Container>
-        {data.map(e => (
-          <div key={e.id}>
-            <img src={e.urlImg} alt="notFound" style={{ width: "120px" }} />
-            <h5>{e.name}</h5>
-            <p>R${e.price}</p>
-            <p><strong>Igredientes:</strong> {e.details}</p>
-            <div className="d-flex gap-3">
-              <Button
-                variant="danger"
-                onClick={() => handlePlus(e)}
-              >
-                +
-              </Button>
-              <h3>{e.count}</h3>
-              <Button
-                variant="danger"
-                onClick={() => handleMinus(e)}
-              >
-                -
-              </Button>
-            </div>
-          </div>
-        ))}
+        <Row className="mt-5">
+          {data.map(e => (
+            <Col xs sm={12} md={6} key={e.id}>
+              <div className="card mb-3" style={{ height: "300px" }}>
+                <div className="row g-0">
+                  <div className="col-md-4 d-flex align-items-center" style={{ height: "300px" }}>
+                    <img src={e.urlImg} alt="notFound" class="img-fluid rounded-start" />
+                  </div>
+                  <div className="col-md-8">
+                    <div className="card-body d-flex flex-column justify-content-center h-100">
+                      <h5 className="card-title">{e.name}</h5>
+                      <p className="card-text">{e.details}</p>
+                      <p className="card-text"><small className="text-body-secondary">
+                        {e.price}
+                      </small></p>
+                      <div className="d-flex gap-3">
+                        <Button
+                          variant="danger"
+                          onClick={() => handlePlus(e)}
+                        >
+                          +
+                        </Button>
+                        <h3>{e.count}</h3>
+                        <Button
+                          variant="danger"
+                          onClick={() => handleMinus(e)}
+                        >
+                          -
+                        </Button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </Col>
+          ))}
+        </Row>
       </Container>
     </main>
   );
