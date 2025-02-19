@@ -16,14 +16,14 @@ export default function Home() {
       <Container>
         <Row className="mt-5">
           {data.map(e => (
-            <Col xs sm={12} md={6} key={e.id}>
-              <div className="card mb-3" style={{ height: "300px" }}>
+            <Col lg={6} key={e.id}>
+              <div className="card mb-3">
                 <div className="row g-0">
-                  <div className="col-md-4 d-flex align-items-center" style={{ height: "300px" }}>
-                    <img src={e.urlImg} alt="notFound" class="img-fluid rounded-start" />
+                  <div className="col-md-4">
+                    <img src={e.urlImg} alt="notFound" class="img-thumb rounded-start" />
                   </div>
                   <div className="col-md-8">
-                    <div className="card-body d-flex flex-column justify-content-center h-100">
+                    <div className="card-body">
                       <h5 className="card-title">{e.name}</h5>
                       <p className="card-text">{e.details}</p>
                       <p className="card-text"><small className="text-body-secondary">
