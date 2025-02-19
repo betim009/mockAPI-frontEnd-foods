@@ -4,4 +4,10 @@
     display: flex;
     justify-content: space-evenly;
     align-items: center;
+    color: white;
+}
+
+.logo-app {
+    width: 100px;
+    cursor: pointer;
 }
