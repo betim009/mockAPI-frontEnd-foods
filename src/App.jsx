@@ -4,6 +4,8 @@ import About from "./pages/about";
 import NotFound from "./pages/not-found";
 import Layout from "./components/layout";
 import Payment from "./pages/payment";
+import SignIn from "./pages/sign-in";
+import LayoutAuth from "./components/layout-auth";
 
 function App() {
   return (
@@ -13,6 +15,9 @@ function App() {
           <Route index element={<Home />} />
           <Route path="/payment" element={<Payment />} />
           <Route path="/cart" element={<About />} />
+        </Route>
+        <Route element={<LayoutAuth />}>
+          <Route path="sign-in" element={<SignIn />}/>
         </Route>
         <Route path="/*" element={<NotFound />} />
       </Routes>

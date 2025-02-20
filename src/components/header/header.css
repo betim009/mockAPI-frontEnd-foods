@@ -11,3 +11,10 @@
     width: 100px;
     cursor: pointer;
 }
+
+.my-user-icon {
+    text-decoration: none;
+    color: white;
+    border-bottom: none;
+}
+

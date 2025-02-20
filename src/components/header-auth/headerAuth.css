@@ -1,0 +1,17 @@
+.my-header-auth {
+    background-color: rgb(221, 55, 55);
+    height: 140px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+.my-nav-auth a {
+    color: white;
+    font-size: 20px;
+    display: flex;
+    flex-direction: column;
+    text-decoration: center;
+    align-items: center;
+}
