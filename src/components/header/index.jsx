@@ -15,7 +15,7 @@ export default function Header() {
 
             <div>
                 <Link to="/sign-in" className='my-user-icon'>
-                    <FaCircleUser  size={30}/>
+                    <FaCircleUser size={30} />
                 </Link>
             </div>
         </header>
