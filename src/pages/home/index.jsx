@@ -10,7 +10,9 @@ import MyCard from "../../components/my-card";
 
 export default function Home() {
   const { dataLanches, dataBebidas } = useFetch();
-  const { handlePlus, handleMinus } = useCart();
+  const { cart, someCart } = useCart();
+
+  console.log('cart:', cart)
 
   console.log(dataLanches)
   return (
@@ -38,7 +40,21 @@ export default function Home() {
             </Accordion.Body>
           </Accordion.Item>
         </Accordion>
-        <div className="d-grid gap-2 mt-5">
+
+        <div>
+          <Row className="mt-3">
+            {cart.map(e => (
+              <Col md={12} lg={6} key={e.id}>
+                <p className="fw-bold">{e.name}</p>
+                <p>{e.count} - {e.price} x</p>
+                <hr />
+              </Col>
+            ))}
+          </Row>
+          {someCart ? (<h4>Valor final: R$<small>{someCart}</small></h4>) : ""}
+        </div>
+
+        <div className="d-grid gap-2 mt-5 mb-5">
           <Button variant="danger" size="lg">
             Finalizar Compra
           </Button>
@@ -46,6 +62,6 @@ export default function Home() {
 
 
       </Container>
-    </main>
+    </main >
   );
 }

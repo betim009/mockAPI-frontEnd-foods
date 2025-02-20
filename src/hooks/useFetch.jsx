@@ -34,7 +34,6 @@ export default function useFetch(initialValue = []) {
             setDataBebidas(filterBebidas);
         };
 
-
         contentLoad();
     }, []);
 

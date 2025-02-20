@@ -2,8 +2,8 @@ import "./footer.css";
 
 export default function Footer() {
   return (
-    <footer>
-      <h2>App</h2>
+    <footer className="my-footer">
+      <p>2025</p>
     </footer>
   );
 }

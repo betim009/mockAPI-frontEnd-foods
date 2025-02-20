@@ -14,16 +14,14 @@ export default function MyCard({ array }) {
                         <Card>
                             <Row>
                                 <Col sm={12} md={6} lg={5} className='col-thumb'>
-                                    <img src={e.urlImg} alt="notFound" class="img-thumb rounded-start" />
+                                    <img src={e.urlImg} alt="notFound" className="img-thumb rounded-start" />
                                 </Col>
                                 <Col sm={12} md={6} lg={7} className='col-body'>
                                     <h5 className="card-title">{e.name}</h5>
                                     <p className="card-text">{e.details}</p>
-                                    <p className="card-text">
-                                        <h4 className="text-body-secondary">
-                                            {e.price}
-                                        </h4>
-                                    </p>
+                                    <h4 className="cart-text mb-3">
+                                        {e.price}
+                                    </h4>
                                     <div className="div-cart">
                                         <Button
                                             variant="danger"

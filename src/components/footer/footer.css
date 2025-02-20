@@ -1,4 +1,8 @@
-footer {
+.my-footer {
+    display: flex;
     background-color: rgb(221, 55, 55);
     height: 190px;
+    color: white;
+    align-items: end;
+    justify-content: center;
 }
