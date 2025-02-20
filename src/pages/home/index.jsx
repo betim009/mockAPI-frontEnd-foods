@@ -3,14 +3,17 @@ import useCart from "../../hooks/useCart";
 import useFetch from "../../hooks/useFetch";
 import Container from 'react-bootstrap/Container';
 import Button from 'react-bootstrap/Button';
-import { Card, Col, Row } from "react-bootstrap";
+import { Col, Row } from "react-bootstrap";
 import Accordion from 'react-bootstrap/Accordion';
 import MyCard from "../../components/my-card";
+import { useNavigate } from "react-router-dom";
 
 
 export default function Home() {
   const { dataLanches, dataBebidas } = useFetch();
   const { cart, someCart } = useCart();
+
+  const navigate = useNavigate();
 
   console.log('cart:', cart)
 
@@ -55,7 +58,11 @@ export default function Home() {
         </div>
 
         <div className="d-grid gap-2 mt-5 mb-5">
-          <Button variant="danger" size="lg">
+          <Button
+            variant="danger"
+            size="lg"
+            onClick={() => navigate('/payment')}
+          >
             Finalizar Compra
           </Button>
         </div>
