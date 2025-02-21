@@ -4,8 +4,7 @@ import './navBar.css'
 export default function MyNavBar() {
   return (
     <nav className="my-nav">
-      <NavLink to="/">Home</NavLink>
-      <NavLink to="/cart">Sua Compra</NavLink>
+      <NavLink to="/payment">Sua Compra</NavLink>
     </nav>
   );
 }
