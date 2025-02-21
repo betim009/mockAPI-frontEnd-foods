@@ -1,6 +1,7 @@
 import './payment.css'
 import { Col, Container, Row } from 'react-bootstrap'
 import { IoMdArrowRoundBack } from "react-icons/io";
+import Form from 'react-bootstrap/Form';
 import { Link } from 'react-router-dom'
 import useCart from '../../hooks/useCart'
 
@@ -23,7 +24,7 @@ export default function Payment() {
         return (
             <Row>
                 {cart.map(e => (
-                    <Col md={12} lg={4}>
+                    <Col key={e.id} md={12} lg={4}>
                         <img className="thumb-payment" src={e.imagem} />
                         <h4>{e.nome}</h4>
                         <p>{e.count}x R${e.preco.toFixed(2).replace(".", ",")}</p>
@@ -43,8 +44,35 @@ export default function Payment() {
                     {
                         cart.length === 0 ? null : (
                             <Col>
-                                <h4>Formas de pagamento</h4>
+                                <section>
+                                    <h4>Check-out</h4>
+                                    <Form.Select size="lg" aria-label="Escolha uma forma de pagamento">
+                                        <option value="" disabled selected>Escolha uma forma de pagamento</option>
+                                        <option value="1">Cartão</option>
+                                        <option value="2">Dinheiro</option>
+                                        <option value="3">PIX</option>
+                                    </Form.Select>
+                                </section>
+
+                                <fieldset className="mb-3 mt-3">
+                                    <legend>Entrega ou retirar no local?</legend>
+                                    <Form.Check
+                                        className='check-payment'
+                                        label="No local"
+                                        name="group1"
+                                        type="radio"
+                                        id="radio-1"
+                                    />
+                                    <Form.Check
+                                        className='check-payment'
+                                        label="Na entrega"
+                                        name="group1"
+                                        type="radio"
+                                        id="radio-2"
+                                    />
+                                </fieldset>
                             </Col>
+
                         )
                     }
                     <Col>
