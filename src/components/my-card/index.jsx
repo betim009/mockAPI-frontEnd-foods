@@ -14,13 +14,13 @@ export default function MyCard({ array }) {
                         <Card>
                             <Row>
                                 <Col sm={12} md={6} lg={5} className='col-thumb'>
-                                    <img src={e.urlImg} alt="notFound" className="img-thumb rounded-start" />
+                                    <img src={e.imagem} alt="notFound" className="img-thumb rounded-start" />
                                 </Col>
                                 <Col sm={12} md={6} lg={7} className='col-body'>
-                                    <h5 className="card-title">{e.name}</h5>
-                                    <p className="card-text">{e.details}</p>
+                                    <h5 className="card-title">{e.nome}</h5>
+                                    <p className="card-text">{e.descricao}</p>
                                     <h4 className="cart-text mb-3">
-                                        {e.price}
+                                        R${e.preco.toFixed(2).replace(".", ",")}
                                     </h4>
                                     <div className="div-cart">
                                         <Button

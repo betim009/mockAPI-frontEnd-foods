@@ -6,21 +6,17 @@ import Button from 'react-bootstrap/Button';
 import { Col, Row } from "react-bootstrap";
 import Accordion from 'react-bootstrap/Accordion';
 import MyCard from "../../components/my-card";
-import { useNavigate } from "react-router-dom";
+import AlertError from "../../components/alert-error";
 
 
 export default function Home() {
   const { dataLanches, dataBebidas } = useFetch();
-  const { cart, someCart } = useCart();
+  const { cart, someCart, handleSubmitPayment } = useCart();
 
-  const navigate = useNavigate();
-
-  console.log('cart:', cart)
-
-  console.log(dataLanches)
   return (
     <main>
       <Container>
+
         <Accordion className="mt-5" defaultActiveKey={['0']} alwaysOpen>
           <Accordion.Item eventKey="0">
             <Accordion.Header>
@@ -48,24 +44,28 @@ export default function Home() {
           <Row className="mt-3">
             {cart.map(e => (
               <Col md={12} lg={6} key={e.id}>
-                <p className="fw-bold">{e.name}</p>
-                <p>{e.count} - {e.price} x</p>
+                <p className="fw-bold">{e.nome}</p>
+                <p>{e.count} - {e.preco} x</p>
                 <hr />
               </Col>
             ))}
           </Row>
-          {someCart ? (<h4>Valor final: R$<small>{someCart}</small></h4>) : ""}
+          {someCart ? (<h4>Valor final: R$<small>{someCart.toFixed(2).replace(".", ",")}</small></h4>) : ""}
         </div>
-
+        
+        <AlertError />
+        
         <div className="d-grid gap-2 mt-5 mb-5">
           <Button
             variant="danger"
             size="lg"
-            onClick={() => navigate('/payment')}
+            onClick={() => handleSubmitPayment()}
           >
             Finalizar Compra
           </Button>
         </div>
+
+
 
 
       </Container>
