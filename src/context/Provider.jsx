@@ -7,12 +7,19 @@ export default function Provider({ children }) {
   const [dataLanches, setDataLanches] = useState([]);
   const [dataBebidas, setDataBebidas] = useState([]);
   const [errorCart, setErrorCart] = useState(false);
+  const [userValidate, setUserValidate] = useState({
+    email: "",
+    name: "",
+    status: "",
+    start: false
+  })
 
   const contextValue = {
     data, setData,
     dataLanches, setDataLanches,
     dataBebidas, setDataBebidas,
-    errorCart, setErrorCart
+    errorCart, setErrorCart,
+    userValidate, setUserValidate
   };
 
   return <Context.Provider value={contextValue}>{children}</Context.Provider>;

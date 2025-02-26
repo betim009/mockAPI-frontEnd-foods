@@ -8,13 +8,14 @@ export default function useCart() {
     const navigate = useNavigate();
 
     const handlePlus = (product) => {
+        if (product.count < 0) return null
         product.count += 1;
         setData([...data]);
     };
 
     const handleMinus = (product) => {
-        product.count -= 1;
         if (product.count <= 0) return null;
+        product.count -= 1;
         setData([...data]);
     };
 

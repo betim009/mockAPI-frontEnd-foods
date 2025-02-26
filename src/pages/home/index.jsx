@@ -7,11 +7,22 @@ import { Col, Row } from "react-bootstrap";
 import Accordion from 'react-bootstrap/Accordion';
 import MyCard from "../../components/my-card";
 import AlertError from "../../components/alert-error";
+import { useContext, useEffect } from "react";
+import Context from "../../context/Context";
+import { useNavigate } from "react-router-dom";
 
 
 export default function Home() {
   const { dataLanches, dataBebidas } = useFetch();
   const { cart, someCart, handleSubmitPayment } = useCart();
+  const { userValidate } = useContext(Context);
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    if (!userValidate.start) {
+      return navigate('/sign-in')
+    }
+  }, [])
 
   return (
     <main>
@@ -52,9 +63,9 @@ export default function Home() {
           </Row>
           {someCart ? (<h4>Valor final: R$<small>{someCart.toFixed(2).replace(".", ",")}</small></h4>) : ""}
         </div>
-        
+
         <AlertError />
-        
+
         <div className="d-grid gap-2 mt-5 mb-5">
           <Button
             variant="danger"
