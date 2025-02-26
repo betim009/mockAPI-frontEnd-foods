@@ -2,6 +2,8 @@ import { Col, Container, Form } from "react-bootstrap";
 import Login from "../../components/login";
 import { useContext, useEffect } from "react";
 import Context from "../../context/Context";
+import { Link } from "react-router-dom";
+import './signIn.css'
 
 export default function SignIn() {
     const { userValidate, setUserValidate } = useContext(Context);
@@ -9,9 +11,13 @@ export default function SignIn() {
     useEffect(() => {
         if (!userValidate.start) {
             userValidate.start = true;
-            setUserValidate({...userValidate});
+            setUserValidate({ ...userValidate });
         }
     }, [])
+
+    const handleClickQuestion = () => {
+        alert('')
+    }
 
     function SingUp() {
         return (
@@ -43,8 +49,14 @@ export default function SignIn() {
     return (
         <main>
             <Container>
-                {!userValidate ? SingUp() : <Login />}
+                {userValidate.email ? SingUp() : <Login />}
 
+                <div className="div-question">
+                    <p>Você já possui uma conta?
+                        {" "}
+                        <Link onClick={handleClickQuestion} className="text-danger">Faça Login</Link>
+                    </p>
+                </div>
             </Container>
         </main>
     )
