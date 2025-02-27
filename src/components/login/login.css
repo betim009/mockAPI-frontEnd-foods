@@ -1,0 +1,18 @@
+.div-login {
+    background-color: #ededed;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    align-items: center;
+    min-height: 340px;
+    min-width: 380px;
+    max-width: 600px;
+    border-radius: 10px;
+
+    margin-top: 10px;
+    margin-bottom: 10px;
+
+    input {
+        min-width: 300px;
+    }
+}
